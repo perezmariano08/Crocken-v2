@@ -22,6 +22,8 @@ import ObviouslyNarrowBlack from "../assets/fonts/Obviously-Narrow/Obviously-Nar
 import ObviouslyNarrowSuper from "../assets/fonts/Obviously-Narrow/Obviously-Narrow-Super.ttf"
 
 export const GlobalStyles = createGlobalStyle`
+    @import url('https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap');
+    
     :root {
         /* Primary Color ------------------ */
         --orange: #ff4713;
@@ -373,5 +375,10 @@ export const GlobalStyles = createGlobalStyle`
         100% {
             transform: translateY(-5px);
         }
+    }
+
+    @keyframes spin {
+        0% { transform: rotate(0deg); }
+        100% { transform: rotate(360deg); }
     }
 `;

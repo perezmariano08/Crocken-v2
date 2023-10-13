@@ -104,6 +104,7 @@ export const IconsContainer = styled.div`
 `
 
 export const IconUser = styled.div`
+    cursor: pointer;
     padding: 6px 12px;
     font-size: 14px;
     display: flex;

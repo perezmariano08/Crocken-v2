@@ -13,7 +13,7 @@ const ModalUser = () => {
   const {hiddenMenu, currentUser} = useSelector((state) => state.user);
 
   const dispatch = useDispatch();
-
+  
   return (
     <AnimatePresence>
       {!hiddenMenu && (

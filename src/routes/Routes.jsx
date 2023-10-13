@@ -15,6 +15,7 @@ import PrivateLayout from '../components/Layout/PrivateLayout'
 import Layout from '../components/Layout/Layout'
 import LoadingPage from '../pages/LoadingPage/LoadingPage'
 import ProtectedRoute from '../components/ProtectedRoute/ProtectedRoute'
+import User from '../pages/User/User'
 
 const Routes = () => {
     return (
@@ -38,6 +39,7 @@ const Routes = () => {
                 <Route path='/contact' element={<ProtectedRoute redirectTo='/login'><PrivateLayout><Contact/></PrivateLayout></ProtectedRoute>}></Route>
                 <Route path='/products' element={<ProtectedRoute redirectTo='/login'><PrivateLayout><Products/></PrivateLayout></ProtectedRoute>}></Route>
                 <Route path='/cart' element={<ProtectedRoute redirectTo='/login'><PrivateLayout><Cart/></PrivateLayout></ProtectedRoute>}></Route>
+                <Route path='/user' element={<ProtectedRoute redirectTo='/login'><PrivateLayout><User/></PrivateLayout></ProtectedRoute>}></Route>
             </ReactDomRoutes>
         </BrowserRouter>
         

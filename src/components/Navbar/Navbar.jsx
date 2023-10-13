@@ -47,7 +47,7 @@ const Navbar = () => {
                         >
                             <span>
                                 {
-                                    currentUser ? `${currentUser.nombre}` :
+                                    currentUser ? `Hola ${currentUser.nombre}` :
                                     "Iniciar Sesion"
                                 }
                             </span>
@@ -84,13 +84,7 @@ const Navbar = () => {
                     </ItemContainerStyled>
                 </motion.div>
                 <motion.div>
-                    <ItemContainerStyled to="/">
-                        <HiHeart/>
-                        favoritos
-                    </ItemContainerStyled>
-                </motion.div>
-                <motion.div>
-                    <ItemContainerStyled to="/login">
+                    <ItemContainerStyled to="/user">
                         <HiUser/>
                         Mi cuenta
                     </ItemContainerStyled>

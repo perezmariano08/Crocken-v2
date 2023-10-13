@@ -12,8 +12,9 @@ export const ModalContainerStyled = styled(motion.div)`
   z-index: 98;
   border-radius: 1rem 0 0 1rem;
   padding: 2rem;
-
+  
   & span {
+    font-family: 'Poppins';
     display: flex;
     margin-top: 10px;
     cursor: pointer;
@@ -25,13 +26,15 @@ export const ModalContainerStyled = styled(motion.div)`
 `;
 
 export const LinkStyled = styled(Link)`
+  font-family: 'Poppins';
+  color: var(--orange);
   &:hover {
     opacity: 90%;
   }
 `;
 
-export const UsernameStyled = styled.h2`
-  font-weight: 400;
+export const UsernameStyled = styled.h4`
+  font-weight: 900;
 `;
 
 export const HrStyled = styled.hr`

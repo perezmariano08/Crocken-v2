@@ -44,7 +44,7 @@ export const ProductCardImg = styled.div`
     }
 
     @media (max-width: 768px) {
-        width: 30%;
+        width: 50%;
         height: 190px;
         border-radius: 20px 0 0 20px;
     }

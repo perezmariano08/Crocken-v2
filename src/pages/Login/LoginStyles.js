@@ -18,19 +18,44 @@ export const LoginWrapper = styled.div`
 
 export const LoginWelcomeWrapper = styled.div`
     display: flex;
+    flex-direction: column;
+    justify-content: center;
     background-color: var(--200);
     width: 50%;
     height: 100%;
     padding: 3rem;
 
-    img {
-        height: 30px;
+    .logo {
+        width: 100px;
+    }
+
+    .vector {
+        width: 50%;
     }
 
     @media (max-width: 768px) {
         display: none;
     }
 `
+
+export const LoginWelcomeText = styled.div`
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    gap: 20px;
+
+    h2 {
+        margin-top: 20px;
+    }
+
+    p {
+        font-family: 'Poppins', sans-serif;
+    }
+`
+
+
 export const LoginFormWrapper = styled.div`
     display: flex;
     flex-direction: column;
@@ -43,6 +68,7 @@ export const LoginFormWrapper = styled.div`
 
     @media (max-width: 768px) {
         width: 100%;
+        padding: 0 20px;
     }
 `
 
@@ -58,7 +84,7 @@ export const FormWrapper = styled.div`
 
     @media (max-width: 768px) {
         width: 100%;
-        padding: 50px 20px;
+        padding: 50px 0px;
     }
 
     h4 {
