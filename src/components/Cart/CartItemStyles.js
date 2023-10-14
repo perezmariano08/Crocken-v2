@@ -1,26 +1,5 @@
 import styled from "styled-components";
 
-export const CartPageWrapper = styled.div`
-    display: flex;
-    flex-direction: column;
-    width: 100%;
-    justify-content: center;
-    padding: 20px;
-    gap: 20px;
-
-    h2 {
-        font-size: 30px;
-        text-align: center;
-    }
-`
-
-export const CartWrapper = styled.div`
-    display: flex;
-    flex-direction: column;
-    width: 100%;
-    gap: 20px;
-`
-
 export const CartItem = styled.div`
     width: 100%;
     height: 150px;
@@ -40,6 +19,9 @@ export const CartItem = styled.div`
 
     h5 {
         font-family: 'Obviously-Narrow';
+        color: var(--blue-dark);
+        font-size: 16px;
+        line-height: 16px;
     }
 `
 
@@ -95,6 +77,7 @@ export const CartItemCount = styled.div`
     gap: 10px;
     justify-content: center;
     align-items: center;
+    color: var(--blue-dark);
 
     .but {
         display: flex;

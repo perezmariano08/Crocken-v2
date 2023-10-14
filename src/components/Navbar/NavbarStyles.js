@@ -157,7 +157,7 @@ export const NavbarBottomContainerStyled = styled.nav`
     }
 `
 
-export const ItemContainerStyled = styled(NavLink)`
+export const ItemContainerStyled = styled(motion(NavLink))`
     display: flex;
     min-width: 50px;
     flex-direction: column;

@@ -1,11 +1,19 @@
 import { useDispatch, useSelector } from 'react-redux'
-import { ModalCartWrapper, ModalOverlayStyled } from './ModalCartStyles'
+import { FooterSubtotal, FooterTotal, Item, ModalCartBody, ModalCartFooter, ModalCartHeader, ModalCartProducts, ModalCartWrapper, ModalOverlayStyled} from './ModalCartStyles'
 import { toggleHiddenCart } from '../../redux/cart/cartSlice'
 import { AnimatePresence } from 'framer-motion'
+import Button  from '../../components/UI/Button/Button'
+import {IoMdClose} from 'react-icons/io'
+import CartItems from '../Cart/CartItem'
+import { formatPrice } from '../../utils/formatPrice'
 
 const ModalCart = () => {
     const dispatch = useDispatch()
     const hiddenCart = useSelector((state) => state.cart.hidden)
+    const {cartItems} = useSelector((state) => state.cart)
+    const totalPrice = cartItems.reduce((acc, item) => {
+        return (acc += item.price * item.quantity)
+    }, 0);
     return (
         <>
             {!hiddenCart && (
@@ -24,7 +32,30 @@ const ModalCart = () => {
                         transition={{ type: "spring", damping: 27 }}
                         key="cart-modal"
                     >
-                        <h1 onClick={() => dispatch(toggleHiddenCart())}>X</h1>
+                        <ModalCartHeader>
+                            <span>Mi carrito</span>
+                            <IoMdClose onClick={() => dispatch(toggleHiddenCart())}/>
+                        </ModalCartHeader>
+                        <ModalCartBody>
+                            <ModalCartProducts>
+                                <CartItems/>
+                            </ModalCartProducts>
+
+                            
+                        </ModalCartBody>
+                        <ModalCartFooter>
+                            <FooterSubtotal>
+                                <span>Subtotal:</span>
+                                <span>$ {formatPrice(totalPrice)}</span>
+                            </FooterSubtotal>
+                            <FooterTotal>
+                                <span>Total:</span>
+                                <span>$ {formatPrice(totalPrice)}</span>
+                            </FooterTotal>
+                            <Button background={'blue-gradient'}>
+                                Comprar
+                            </Button>
+                        </ModalCartFooter>
                     </ModalCartWrapper>
                         
                     )

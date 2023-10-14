@@ -28,7 +28,6 @@ const ProductCard = ({id, img, price, title, recommended}) => {
                         </span>  
                     </span>
                 </ProductCardInfo>
-                
                 <ProductCardPriceAdd>
                     <span className='price'>
                         <span className='signo'>$</span>

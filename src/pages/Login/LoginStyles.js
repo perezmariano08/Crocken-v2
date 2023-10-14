@@ -48,6 +48,7 @@ export const LoginWelcomeText = styled.div`
 
     h2 {
         margin-top: 20px;
+        text-align: center;
     }
 
     p {
@@ -94,7 +95,7 @@ export const FormWrapper = styled.div`
 
     span {
         font-size: 0.9rem;
-        color: var(--red);
+        color: var(--orange);
         width: 100%;
         font-family: 'Poppins';
     }
@@ -114,7 +115,8 @@ export const FormButtons = styled.div`
     width: 100%;
     display: flex;
     flex-direction: column;
-    gap: 20px;
+    gap: 30px;
+    margin-top: 30px;
 
     input {
         width: 100%;

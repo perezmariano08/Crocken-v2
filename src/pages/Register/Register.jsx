@@ -54,7 +54,7 @@ const Register = () => {
                         <Input type="password" name="password" placeholder="Ingrese contraseña" />
                         <FormButtons>
                             <LoadingSpinner loading={loading}/>
-                            <Submit type="button">
+                            <Submit type="button" background="blue-dark">
                                 Registrarte
                             </Submit>
                             <NavLink to={'/login'}>
@@ -69,8 +69,8 @@ const Register = () => {
             <LoginWelcomeWrapper>
             <LoginWelcomeText>
                     <img src="./img_register.png" alt="" className='vector' />
-                    <h2>Bienvenido</h2>
-                    <p>Ingresá tus datos y comenzá tu aventura con nosotros</p>
+                    <h2>Te damos la bienvendia a Crocken!</h2>
+                    <p>Registrate para disfrutar de nuestros productos, beneficios y más.</p>
                 </LoginWelcomeText>
             </LoginWelcomeWrapper>
         </LoginWrapper>

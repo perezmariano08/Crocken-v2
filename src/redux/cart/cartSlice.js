@@ -38,6 +38,9 @@ const cartSlice = createSlice({
         },
         //Toggle de apertura/cierre de carrito
         toggleHiddenCart: (state) => {
+            document.body.style.overflow === 'hidden' 
+                ? document.body.style.overflow = 'visible' 
+                : document.body.style.overflow = 'hidden'
             return {
                 ...state,
                 hidden: !state.hidden

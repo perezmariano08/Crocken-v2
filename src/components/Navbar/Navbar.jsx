@@ -65,30 +65,22 @@ const Navbar = () => {
                 <ModalUser/>
             </NavbarWrapper>
             <NavbarBottomContainerStyled>
-            <motion.div>
-                    <ItemContainerStyled to="/home" >
-                        <HiOutlineHome/>
-                        inicio
-                    </ItemContainerStyled>
-                </motion.div>
-                <motion.div>
-                    <ItemContainerStyled to="/products">
-                        <HiOutlineViewGrid/>
-                        menú
-                    </ItemContainerStyled>
-                </motion.div>
-                <motion.div>
-                    <ItemContainerStyled to="/cart">
-                        <HiShoppingCart/>
-                        Mi carrito
-                    </ItemContainerStyled>
-                </motion.div>
-                <motion.div>
-                    <ItemContainerStyled to="/user">
-                        <HiUser/>
-                        Mi cuenta
-                    </ItemContainerStyled>
-                </motion.div>
+                <ItemContainerStyled to="/home" whileTap={{scale: .98}}>
+                    <HiOutlineHome/>
+                    inicio
+                </ItemContainerStyled>
+                <ItemContainerStyled to="/products" whileTap={{scale: .98}}>
+                    <HiOutlineViewGrid/>
+                    menú
+                </ItemContainerStyled>
+                <ItemContainerStyled to="/cart" whileTap={{scale: .98}}>
+                    <HiShoppingCart/>
+                    Mi carrito
+                </ItemContainerStyled>
+                <ItemContainerStyled to="/user" whileTap={{scale: .98}}>
+                    <HiUser/>
+                    Mi cuenta
+                </ItemContainerStyled>
             </NavbarBottomContainerStyled>
             
         </>
