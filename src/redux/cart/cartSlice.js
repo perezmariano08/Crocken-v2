@@ -1,5 +1,5 @@
-import {createSlice} from "@reduxjs/toolkit"
-import { addItemToCart, removeItemFromCart, resetShippingCost } from "./cart-utils"
+import { createSlice } from "@reduxjs/toolkit"
+import { addItemToCart, removeItemFromCart, removeProductFromCart, resetShippingCost } from "./cart-utils"
 import { SHIPPING_COST } from "../../utils/constants"
 
 const INITIAL_STATE = {
@@ -20,6 +20,7 @@ const cartSlice = createSlice({
                 shippingCost: SHIPPING_COST
             }
         },
+
         //Remover del carrito
         removeFromCart: (state, action) => {
             return {
@@ -28,7 +29,8 @@ const cartSlice = createSlice({
                 shippingCost: resetShippingCost(state.cartItems, SHIPPING_COST)
             }
         },
-        //Limpiar todo el  carrito
+
+        //Limpiar todo el carrito
         clearCart: (state) => {
             return {
                 ...state,
@@ -36,6 +38,16 @@ const cartSlice = createSlice({
                 shippingCost: 0
             } 
         },
+
+        //Limpiar producto del carrito
+        removeProduct: (state, action) => {
+            return {
+                ...state,
+                cartItems: removeProductFromCart(state.cartItems, action.payload),
+                shippingCost: 0
+            } 
+        },
+
         //Toggle de apertura/cierre de carrito
         toggleHiddenCart: (state) => {
             document.body.style.overflow === 'hidden' 
@@ -53,7 +65,8 @@ export const {
     addToCart,
     clearCart,
     removeFromCart,
-    toggleHiddenCart
+    toggleHiddenCart,
+    removeProduct
 } = cartSlice.actions;
 
 export default cartSlice.reducer;

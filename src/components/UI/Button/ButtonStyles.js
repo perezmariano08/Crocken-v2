@@ -3,7 +3,7 @@ import { NavLink } from "react-router-dom";
 import styled from "styled-components";
 
 
-export const ButtonLinkStyled = styled(NavLink)`
+export const ButtonLinkStyled = styled.button`
     font-size: 14px;
     width: auto;
     font-weight: 400;

@@ -3,7 +3,7 @@ import { CartItem, CartItemCount, CartItemInfo, CartItemInfoBottom, CartItemInfo
 
 import { HiOutlineTrash } from "react-icons/hi";
 import { useDispatch, useSelector } from 'react-redux';
-import { addToCart, removeFromCart } from '../../redux/cart/cartSlice';
+import { addToCart, removeFromCart, removeProduct } from '../../redux/cart/cartSlice';
 import { addItemToCart } from '../../redux/cart/cart-utils';
 
 const CartItems = () => {
@@ -13,7 +13,7 @@ const CartItems = () => {
     return (
         <>
             {
-                cartItems.length > 1 ?
+                cartItems.length > 0 ?
                 cartItems.map((item) => {
                     const {id, img, title, price, quantity} = item
                     return <CartItem key={id}>
@@ -23,7 +23,7 @@ const CartItems = () => {
                     <CartItemInfo>
                         <CartItemInfoTop>
                             <h5>{title}</h5>
-                            <HiOutlineTrash onClick={() => dispatch(removeFromCart(id))}/>
+                            <HiOutlineTrash onClick={() => dispatch(removeProduct(id))}/>
                         </CartItemInfoTop>
                         <CartItemInfoBottom>
                             <h5>${price}</h5>

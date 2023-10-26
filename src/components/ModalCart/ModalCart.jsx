@@ -1,6 +1,6 @@
 import { useDispatch, useSelector } from 'react-redux'
-import { FooterSubtotal, FooterTotal, Item, ModalCartBody, ModalCartFooter, ModalCartHeader, ModalCartProducts, ModalCartWrapper, ModalOverlayStyled} from './ModalCartStyles'
-import { toggleHiddenCart } from '../../redux/cart/cartSlice'
+import { FooterButtons, FooterSubtotal, FooterTotal, Item, ModalCartBody, ModalCartFooter, ModalCartHeader, ModalCartProducts, ModalCartWrapper, ModalOverlayStyled} from './ModalCartStyles'
+import { clearCart, toggleHiddenCart } from '../../redux/cart/cartSlice'
 import { AnimatePresence } from 'framer-motion'
 import Button  from '../../components/UI/Button/Button'
 import {IoMdClose} from 'react-icons/io'
@@ -52,9 +52,19 @@ const ModalCart = () => {
                                 <span>Total:</span>
                                 <span>$ {formatPrice(totalPrice)}</span>
                             </FooterTotal>
-                            <Button background={'blue-gradient'}>
-                                Comprar
-                            </Button>
+                            <FooterButtons>
+                                <Button background={'blue-gradient'} 
+                                    disabled={cartItems.length === 0}>
+                                    Comprar
+                                </Button>
+                                <Button background={'orange-gradient'}
+                                    onClick={() => dispatch(clearCart())}
+                                    disabled={cartItems.length === 0}
+                                >
+                                    Vaciar carrito
+                                </Button>
+                            </FooterButtons>
+                            
                         </ModalCartFooter>
                     </ModalCartWrapper>
                         

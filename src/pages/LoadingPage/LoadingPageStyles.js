@@ -13,6 +13,12 @@ export const LoadingPageWrapper = styled.div`
         animation: pulse 1s ease-in-out infinite; /* Aplica la animación 'pulse' con una duración de 1 segundo */
     }
 
+    @media (max-width: 768px) {
+        img {
+            width: 200px;
+        }
+    }
+
     @keyframes pulse {
     0% {
         transform: scale(1);

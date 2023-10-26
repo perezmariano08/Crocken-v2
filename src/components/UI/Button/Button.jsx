@@ -5,7 +5,7 @@ const Button = ({
     background,
     color = '100',
     radius = "20",
-    disabled = false,
+    disabled,
     to,
     target,
     onClick,

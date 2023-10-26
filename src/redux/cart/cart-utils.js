@@ -10,7 +10,7 @@ export const addItemToCart = (cartItems, product) => {
             ? {
                 ...item,
                 quantity: item.quantity + 1
-              }
+            }
             : item
         })
     } else {
@@ -33,12 +33,18 @@ export const removeItemFromCart = (cartItems, id) => {
             ? {
                 ...item,
                 quantity: item.quantity - 1
-              }
+            }
             : item
         })
     } else{
         return cartItems.filter((item) => item.id !== productToRemove.id)
     }
+}
+
+export const removeProductFromCart = (cartItems, id) => {
+    const productToRemove = cartItems.find((item) => item.id === id);
+    return cartItems.filter((item) => item.id !== productToRemove.id)
+
 }
 
 export const resetShippingCost = (cartItems, shippingCost) => {

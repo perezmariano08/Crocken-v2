@@ -8,7 +8,7 @@ export const ModalCartWrapper = styled(motion.div)`
   right: 0;
   width: 400px;
   height: 100%;
-  background-color: var(--orange);
+  background-color: var(--100);
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -35,8 +35,9 @@ export const ModalCartBody = styled.div`
   width: 100%;
   max-height: 70%;
   overflow-y: auto;
-  background: var(--orange);
-  padding: 20px;
+  background: var(--100);
+  padding: 20px 20px 70px 20px;
+  color: var(--blue-dark);
 `;
 
 export const ModalCartProducts = styled.div`
@@ -54,13 +55,15 @@ export const Item = styled.div`
 
 // Modal Cart Footer
 export const ModalCartFooter = styled.div`
-  background: var(--orange);
+  background: var(--100);
+  color: var(--blue-dark);
   height: fit-content;
   padding: 20px;
   width: 100%;
   position: absolute;
   bottom: 0;
   left: 0;
+  border-top: 1px solid var(--blue-dark);
 `;
 
 export const FooterSubtotal = styled.div`
@@ -73,6 +76,12 @@ export const FooterTotal = styled.div`
   display: flex;
   justify-content: space-between;
 ` 
+
+export const FooterButtons = styled.div`
+  display: flex;
+  flex-direction: column;
+  gap: 5px;
+`
 
 
 // Modal Overlay
