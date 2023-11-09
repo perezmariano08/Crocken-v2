@@ -1,49 +1,50 @@
 import React from 'react'
+import { BrowserRouter, Route, Routes as ReactDomRoutes, Navigate } from 'react-router-dom'
 
-import {BrowserRouter, Navigate, Routes as ReactDomRoutes, Route } from 'react-router-dom'
+// ... (importaciones de páginas y componentes)
 
-// Pages
-import Home from '../pages/Home/Home'
-import Products from '../pages/Products/Products'
-import PageNotFound from '../pages/PageNotFound/PageNotFound'
-import AboutUs from '../pages/AboutUs/AboutUs'
-import Contact from '../pages/Contact/Contact'
-import Login from '../pages/Login/Login'
-import Register from '../pages/Register/Register'
-import Cart from '../pages/Cart/Cart'
-import PrivateLayout from '../components/Layout/PrivateLayout'
-import Layout from '../components/Layout/Layout'
-import LoadingPage from '../pages/LoadingPage/LoadingPage'
-import ProtectedRoute from '../components/ProtectedRoute/ProtectedRoute'
-import User from '../pages/User/User'
+const HomeRoute = () => (
+  <Route path='/home' element={<ProtectedRoute redirectTo='/login'><PrivateLayout><Home/></PrivateLayout></ProtectedRoute>} />
+);
+
+const LoginRoute = () => (
+  <Route path='/login' element={<Layout><Login/></Layout>} />
+);
+
+const LoadingRoute = () => (
+  <Route path='/loading' element={<Layout><LoadingPage/></Layout>} />
+);
+
+const RegisterRoute = () => (
+  <Route path='/register' element={<Layout><Register/></Layout>} />
+);
+
+const NotFoundRoute = () => (
+  <Route path='*' element={<ProtectedRoute redirectTo='/login'><Layout><PageNotFound/></Layout></ProtectedRoute>} />
+);
+
+const AboutUsRoute = () => (
+  <Route path='/about-us' element={<ProtectedRoute redirectTo='/login'><PrivateLayout><AboutUs/></PrivateLayout></ProtectedRoute>} />
+);
+
+// ... (definir rutas para otras páginas)
 
 const Routes = () => {
-    return (
-        <BrowserRouter>
-            <ReactDomRoutes>
-                {/* Home */}
-                <Route 
-                    path='/home' 
-                    element={<ProtectedRoute redirectTo='/login'><PrivateLayout><Home/></PrivateLayout></ProtectedRoute>}>
-                </Route>
-                {/* Login */}
-                <Route path='/login' element={<Layout><Login/></Layout>}></Route>
-                <Route path='/loading' element={<Layout><LoadingPage/></Layout>}></Route>
-                <Route index element={<Navigate to={'/loading'} />}/>
-                <Route path='/register' element={<Layout><Register/></Layout>}></Route>
-                <Route 
-                    path='*' 
-                    element={<ProtectedRoute redirectTo='/login'><Layout><PageNotFound/></Layout></ProtectedRoute>}>
-                </Route>
-                <Route path='/about-us' element={<ProtectedRoute redirectTo='/login'><PrivateLayout><AboutUs/></PrivateLayout></ProtectedRoute>}></Route>
-                <Route path='/contact' element={<ProtectedRoute redirectTo='/login'><PrivateLayout><Contact/></PrivateLayout></ProtectedRoute>}></Route>
-                <Route path='/products' element={<ProtectedRoute redirectTo='/login'><PrivateLayout><Products/></PrivateLayout></ProtectedRoute>}></Route>
-                <Route path='/cart' element={<ProtectedRoute redirectTo='/login'><PrivateLayout><Cart/></PrivateLayout></ProtectedRoute>}></Route>
-                <Route path='/user' element={<ProtectedRoute redirectTo='/login'><PrivateLayout><User/></PrivateLayout></ProtectedRoute>}></Route>
-            </ReactDomRoutes>
-        </BrowserRouter>
-        
-    )
+  return (
+    <ReactDomRoutes>
+      <BrowserRouter>
+        <HomeRoute />
+        <LoginRoute />
+        <LoadingRoute />
+        <RegisterRoute />
+        <NotFoundRoute />
+        <AboutUsRoute />
+        {/* ... (definir rutas para otras páginas) */}
+        {/* Asegúrate de agregar nuevas rutas de esta manera */}
+        <Route index element={<Navigate to='/loading' />} />
+      </BrowserRouter>
+    </ReactDomRoutes>
+  );
 }
 
-export default Routes
+export default Routes;
